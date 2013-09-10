@@ -2,6 +2,7 @@
 // http://karma-runner.github.io/0.10/config/configuration-file.html
 
 module.exports = function(config) {
+    'use strict';
   config.set({
     // base path, that will be used to resolve files and exclude
     basePath: '',
@@ -19,7 +20,7 @@ module.exports = function(config) {
       'test/spec/**/*.js'
     ],
       
-    reporters: ['progress', 'brackets'],
+    reporters: ['progress','brackets'],
 
     // list of files / patterns to exclude
     exclude: [],
@@ -48,7 +49,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome'],
+    browsers: ['Chrome', 'Firefox'],
       
     captureTimeout: 60000,
 
