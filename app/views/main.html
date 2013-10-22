@@ -1,9 +1,18 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
+<div>
+  <h1>WebPuzzle</h1>
   <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
+      <div ng-repeat="wc in webcomponents">
+          <table><tr>
+              <td>
+                  <img ng-src="{{wc.imageLink}}" style="width: 150px"/>
+              </td>
+              <td>
+                  <h3 style="display: inline-block">{{wc.name}}</h3>
+                  <br/>
+                  {{wc.description}}
+              </td>
+          </tr></table>
+          <br/>
+      </div>
   </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
 </div>
