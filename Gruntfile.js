@@ -208,7 +208,7 @@ module.exports = function (grunt) {
       // Usemin blocks.
       // dist: {
       //   files: {
-      //     '<%= yeoman.dist %>/styles/main.css': [
+      //     '<%= yeoman.dist %>/styles/list.css': [
       //       '.tmp/styles/{,*/}*.css',
       //       '<%= yeoman.app %>/styles/{,*/}*.css'
       //     ]

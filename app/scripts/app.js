@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('WebPuzzleFrontApp', [])
+angular.module('WebPuzzleFrontApp', ['ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/list.html',
         controller: 'MainCtrl'
       })
       .otherwise({

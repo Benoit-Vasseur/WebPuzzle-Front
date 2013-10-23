@@ -7,7 +7,7 @@ angular.module('WebPuzzleFrontApp')
         //Get data from webservice
         $http({
             method: 'GET',
-            url: 'http://localhost:3000/web_components.json'
+            url: 'http://webpuzzlews.herokuapp.com/web_components.json'
         }).
             success(function (data, status, headers, config) {
                 $scope.webcomponents = data;
