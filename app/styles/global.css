@@ -1,3 +1,41 @@
 body {
+    padding-top: 70px;
+}
 
+.wc {
+    display: flex;
+    box-shadow: 0px 0px 10px rgb(199, 199, 199);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(199, 199, 199);
+}
+
+.wc-container {
+    padding: 8px;
+}
+
+.wc-image-container {
+    flex: 1;
+}
+
+.wc-image {
+    width: 100%;
+}
+
+.wc-text {
+    flex: 3;
+    padding-left: 10px;
+    height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wc-title {
+    margin-top: 8px;
+    margin-bottom: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.wc-description {
 }

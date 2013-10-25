@@ -1,13 +1,32 @@
-<div>
-    <h1>WebPuzzle</h1>
-
-    <div ng-repeat="wc in webcomponents" style="display: inline-block">
-        <div style="display: inline">
-            <img ng-src="{{wc.imageLink}}" style="width: 150px"/>
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">WebPuzzle</a>
         </div>
-        <div style="display: inline">
-            <h3 style="display: block">{{wc.name}}</h3>
-            {{wc.description}}
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Search Components</a></li>
+                <li><a href="#contact">Account</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div ng-repeat="wc in webcomponents" class="wc-container col-sm-6 col-md-4 col-lg-3">
+        <div class="wc">
+            <div class="wc-image-container">
+                <img ng-src="{{wc.imageLink}}" class="wc-image"/>
+            </div>
+            <div class="wc-text">
+                <h3 class="wc-title">{{wc.name}}</h3>
+
+                <p class="wc-description">{{wc.description}}</p>
+            </div>
         </div>
     </div>
 </div>
