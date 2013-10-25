@@ -1,7 +1,13 @@
 {
   "name": "webpuzzle-front",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "generator-karma": "~0.6.0",
+    "grunt-cli": "~0.1.9",
+    "bower": "~1.2.7",
+    "yo": "~1.0.4",
+    "generator-angular": "~0.5.1"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",

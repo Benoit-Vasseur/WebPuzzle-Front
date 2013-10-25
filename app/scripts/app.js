@@ -7,6 +7,10 @@ angular.module('WebPuzzleFrontApp', ['ngRoute'])
         templateUrl: 'views/list.html',
         controller: 'MainCtrl'
       })
+      .when('/create', {
+        templateUrl: 'views/create.html',
+        controller: 'CreateCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
