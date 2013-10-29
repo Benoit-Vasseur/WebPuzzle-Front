@@ -1,3 +1,3 @@
-<?php 
-include_once("dist/index.html"); 
+<?php
+header('Location: app/index.html');
 ?>

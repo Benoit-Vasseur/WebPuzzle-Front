@@ -16,8 +16,22 @@
         </div>
     </div>
 </div>
+
+
 <div class="container-fluid">
-    <div ng-repeat="wc in webcomponents" class="wc-container col-sm-6 col-md-4 col-lg-3">
+    <div class="btn-group">
+        <button ng-repeat="sortingType in sortingTypes" type="button" class="btn btn-primary" ng-model="selectedFilter.filterExpr" btn-radio="sortingType.filter">{{sortingType.name}}</button>
+    </div>
+    <div>
+        <div class="input-group col-sm-6 col-md-4 col-lg-3">
+            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+            <input type="text" class="form-control" ng-model="filter.text" placeholder="Filter by name">
+        </div>
+    </div>
+    <br/><br/>
+
+    <div ng-repeat="wc in webcomponents | filter:filter.text | orderBy:selectedFilter.filterExpr"
+         class="wc-container col-sm-6 col-md-4 col-lg-3">
         <div class="wc">
             <div class="wc-image-container">
                 <img ng-src="{{wc.imageLink}}" class="wc-image"/>
