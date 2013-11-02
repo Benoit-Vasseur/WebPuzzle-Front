@@ -34,9 +34,20 @@ body {
 .wc-title {
     margin-top: 8px;
     margin-bottom: 5px;
+    margin-right: 35px;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 
 .wc-description {
+}
+
+.icon-github {
+    width: 32px;
+    height: 32px;
+    background-image: url("../images/github-icon.svg");
+    line-height: 32px;
+    position: absolute;
+    right: 12px;
+    top: 10px;
 }
