@@ -45,7 +45,6 @@ body {
 .icon-github {
     width: 32px;
     height: 32px;
-    background-image: url("../images/github-icon.svg");
     line-height: 32px;
     position: absolute;
     right: 12px;
