@@ -19,17 +19,21 @@ angular.module('WebPuzzleFrontApp')
 
         $scope.sortingTypes = [
             {
-                "name": "alpha-asc",
+                "name": "ascending alphabetical order",
+                "iconCss": "fa fa-sort-alpha-asc",
                 "filter": "name"},
             {
-                "name": "alpha-desc",
+                "name": "Descending alphabetical order",
+                "iconCss": "fa fa-sort-alpha-desc",
                 "filter" : "-name"},
             {
-                "name": "popularity-asc",
-                "filter" : "popularity"},
+                "name": "Descending popularity order",
+                "iconCss": "fa fa-sort-amount-desc",
+                "filter" : "-popularity"},
             {
-                "name": "popularity-desc",
-                "filter" : "-popularity"}
+                "name": "Ascending popularity order",
+                "iconCss": "fa fa-sort-amount-asc",
+                "filter" : "popularity"}
         ];
 
         $scope.selectedFilter = {"filterExpr" : 'name'};

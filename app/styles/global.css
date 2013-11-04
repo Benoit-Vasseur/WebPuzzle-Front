@@ -1,8 +1,10 @@
 body {
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 .wc {
+    max-height: 100px;
+    overflow: hidden;
     display: flex;
     box-shadow: 0px 0px 10px rgb(199, 199, 199);
     border-style: solid;
@@ -27,8 +29,6 @@ body {
     flex: 3;
     padding-left: 10px;
     height: 100px;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .wc-title {
@@ -43,11 +43,38 @@ body {
 }
 
 .icon-github {
-    width: 32px;
-    height: 32px;
-    background-image: url("../images/github-icon.svg");
-    line-height: 32px;
+    width: 28px;
+    height: 28px;
     position: absolute;
-    right: 12px;
-    top: 10px;
+    right: 10px;
+    top: 12px;
+    color: #000000;
+}
+
+.github-tooltip {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    position: relative;
+    top: -26px;
+    right: 2px;
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave{
+    -webkit-transition:0.3s linear all;
+    -moz-transition:0.3s linear all;
+    -o-transition:0.3s linear all;
+    transition:0.3s linear all;
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave.ng-leave-active {
+    opacity:0;
+    -webkit-transform: scale(0.5);
+}
+.repeat-item.ng-leave,
+.repeat-item.ng-enter.ng-enter-active {
+    opacity:1;
+    -webkit-transform: scale(1);
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('WebPuzzleFrontApp', ['ngRoute', 'ui.bootstrap.buttons'])
+angular.module('WebPuzzleFrontApp', ['ngRoute', 'ngAnimate', 'ui.bootstrap.buttons', 'ui.bootstrap.tooltip', 'template/tooltip/tooltip-popup.html'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

@@ -19,27 +19,34 @@
 
 
 <div class="container-fluid">
-    <div class="btn-group">
-        <button ng-repeat="sortingType in sortingTypes" type="button" class="btn btn-primary" ng-model="selectedFilter.filterExpr" btn-radio="sortingType.filter">{{sortingType.name}}</button>
-    </div>
-    <div>
-        <div class="input-group col-sm-6 col-md-4 col-lg-3">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-            <input type="text" class="form-control" ng-model="filter.text" placeholder="Filter by name">
+    <div id="list-toolbar">
+        <div class="btn-group sorting-selector">
+            <button ng-repeat="sortingType in sortingTypes" type="button"
+                    class="btn btn-primary" ng-model="selectedFilter.filterExpr" btn-radio="sortingType.filter">
+                <i ng-class="sortingType.iconCss" tooltip="{{sortingType.name}}" tooltip-placement="bottom"></i>
+            </button>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                <input type="text" class="form-control" ng-model="filter.text" placeholder="Filter by name">
+            </div>
         </div>
     </div>
-    <br/><br/>
 
     <div ng-repeat="wc in webcomponents | filter:filter.text | orderBy:selectedFilter.filterExpr"
-         class="wc-container col-sm-6 col-md-4 col-lg-3">
+         class="wc-container repeat-item col-sm-6 col-md-4 col-lg-3">
         <div class="wc">
             <div class="wc-image-container">
                 <img ng-src="{{wc.imageLink}}" class="wc-image"/>
             </div>
             <div class="wc-text">
-                <h3 class="wc-title">{{wc.name}} </h3>
-                <a href="{{wc.githubLink}}" target="_blank"><div class="icon-github"></div></a>
-
+                <h3 class="wc-title">{{wc.name}}</h3>
+                <a href="{{wc.githubLink}}" target="_blank">
+                    <div class="fa fa-github fa-2x icon-github">
+                        <div class="github-tooltip" tooltip="GitHub repo"></div>
+                    </div>
+                </a>
                 <p class="wc-description">{{wc.description}}</p>
             </div>
         </div>
