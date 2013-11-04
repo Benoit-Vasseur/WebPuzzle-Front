@@ -15,7 +15,7 @@ angular.module('WebPuzzleFrontApp')
             error(function (data, status, headers, config) {
             });
 
-        $scope.sortFilter = {text: ""};
+        $scope.filter = {text: ""};
 
         $scope.sortingTypes = [
             {
