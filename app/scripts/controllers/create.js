@@ -7,7 +7,8 @@ angular.module('WebPuzzleFrontApp')
         name :"",
         description: "",
         imageLink: "",
-        githubLink: ""
+        githubLink: "",
+        demoLink: ""
     };
 
     $scope.oldWC = {}
