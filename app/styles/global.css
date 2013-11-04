@@ -3,6 +3,8 @@ body {
 }
 
 .wc {
+    max-height: 100px;
+    overflow: hidden;
     display: flex;
     box-shadow: 0px 0px 10px rgb(199, 199, 199);
     border-style: solid;
@@ -27,8 +29,6 @@ body {
     flex: 3;
     padding-left: 10px;
     height: 100px;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .wc-title {
