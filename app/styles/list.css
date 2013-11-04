@@ -1,0 +1,10 @@
+.sorting-selector {
+    float: left;
+    margin-right: 10px;
+}
+
+#list-toolbar {
+    margin-top: 20px;
+    margin-left: 10px;
+    height : 40px;
+}
