@@ -15,7 +15,13 @@ angular.module('WebPuzzleFrontApp')
             error(function (data, status, headers, config) {
             });
 
-        $scope.filter = {text: ""};
+        $scope.filter = {
+            text: "",
+            filterObject :{
+                name : "",
+                submitter : ""
+            }
+        };
 
         $scope.sortingTypes = [
             {
@@ -36,6 +42,29 @@ angular.module('WebPuzzleFrontApp')
                 "filter" : "popularity"}
         ];
 
-        $scope.selectedSorting = {"sortingFilterExpr" : 'name'};
+        $scope.selectedSorting = {sortingFilterExpr : 'name'};
+
+        $scope.filterTypes = [
+            {
+                name : "By name",
+                filter : "name"
+            },
+            {
+                name : "By author",
+                filter : "submitter"
+            }
+        ];
+
+        $scope.selectedFilterType = {filter : 'name'};
+
+        $scope.$watch('filter.text', function(value){
+            $scope.filter.filterObject = {name : "", submitter : ""};
+            $scope.filter.filterObject[$scope.selectedFilterType.filter] = value;
+        });
+
+        $scope.$watch('selectedFilterType.filter', function(value){
+            $scope.filter.filterObject = {name : "", submitter : ""};
+            $scope.filter.filterObject[value] = $scope.filter.text;
+        });
 
     });

@@ -3,6 +3,10 @@
     margin-right: 10px;
 }
 
+.filter-selector {
+    float: left;
+}
+
 #list-toolbar {
     margin-top: 20px;
     margin-left: 10px;
