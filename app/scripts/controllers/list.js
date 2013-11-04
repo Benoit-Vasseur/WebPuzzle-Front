@@ -15,7 +15,7 @@ angular.module('WebPuzzleFrontApp')
             error(function (data, status, headers, config) {
             });
 
-        $scope.filter = {text: ""};
+        $scope.sortFilter = {text: ""};
 
         $scope.sortingTypes = [
             {
@@ -36,5 +36,6 @@ angular.module('WebPuzzleFrontApp')
                 "filter" : "popularity"}
         ];
 
-        $scope.selectedFilter = {"filterExpr" : 'name'};
+        $scope.selectedSorting = {"sortingFilterExpr" : 'name'};
+
     });
