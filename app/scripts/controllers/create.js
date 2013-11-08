@@ -3,7 +3,7 @@
 angular.module('WebPuzzleFrontApp')
   .controller('CreateCtrl', function ($scope, $http) {
 
-    $scope.webComponent = {
+    $scope.wc = {
         name :"",
         description: "",
         imageLink: "",

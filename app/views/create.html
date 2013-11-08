@@ -4,67 +4,48 @@
             <div class="form-group">
                 <label for="nameWC" class="col-md-2 control-label">Name</label>
                 <div class="col-md-10">
-                    <input type="text" ng-model="webComponent.name" class="form-control" id="nameWC" required placeholder="Your WC's name"/>
+                    <input type="text" ng-model="wc.name" class="form-control" id="nameWC" required placeholder="Your WC's name"/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="descriptionWC" class="col-md-2 control-label">Description</label>
                 <div class="col-md-10">
-                    <textarea ng-model="webComponent.description" class="form-control" id="descriptionWC" required placeholder="Your description" />
+                    <textarea ng-model="wc.description" class="form-control" id="descriptionWC" required placeholder="Your description" />
                 </div>
             </div>
             <div class="form-group">
                 <label for="imageLinkWC" class="col-md-2 control-label">Image link</label>
                 <div class="col-md-10">
-                    <input type="text" ng-model="webComponent.imageLink" class="form-control" id="imageLinkWC" required placeholder="image link of your WC"/>
+                    <input type="text" ng-model="wc.imageLink" class="form-control" id="imageLinkWC" required placeholder="image link of your WC"/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="githubLinkWC" class="col-md-2 control-label">Github link</label>
                 <div class="col-md-10">
-                    <input type="text" ng-model="webComponent.githubLink" class="form-control" id="githubLinkWC" required placeholder="Github link of your WC"/>
+                    <input type="text" ng-model="wc.githubLink" class="form-control" id="githubLinkWC" required placeholder="Github link of your WC"/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="demoLinkWC" class="col-md-2 control-label">Demo link</label>
                 <div class="col-md-10">
-                    <input type="text" ng-model="webComponent.demoLink" class="form-control" id="demoLinkWC" required placeholder="A link to a demo of yout WC (ex: jsFiddle, codePen ...)"/>
+                    <input type="text" ng-model="wc.demoLink" class="form-control" id="demoLinkWC" required placeholder="A link to a demo of yout WC (ex: jsFiddle, codePen ...)"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <button ng-click="saveWC(webComponent)" ng-disabled="webComponentForm.$invalid || isUnchanged(webComponent)" class="btn btn-default">Register</button>
+                    <button ng-click="saveWC(wc)" ng-disabled="webComponentForm.$invalid || isUnchanged(wc)" class="btn btn-default">Register</button>
                 </div>
             </div>
         </form>
 
-        <div>{{ webComponent | json  }}</div>
+        <div>{{ wc | json  }}</div>
         <div>{{ data | json }}</div>
     </div>
 
     <div class="col-md-6">
         <h1>Preview</h1>
-
-        <div style="display: flex">
-            <div style="flex: 1">
-                <img src="" onerror="this.src='http://placehold.it/350x150'" ng-src="{{ webComponent.imageLink }}" style="width: 100%" alt=""/>
-
-            </div>
-            <div style="flex: 3">
-                <h4 class="media-heading">
-                    <span ng-if="webComponent.name"> {{ webComponent.name }}</span>
-                    <span ng-if="! webComponent.name">Your name</span>
-                </h4>
-                <p ng-if="webComponent.description">
-                    {{ webComponent.description }}
-                </p>
-                <p ng-if="! webComponent.description">
-                    Your description
-                </p>
-            </div>
-        </div>
-
+        <web-component/>
     </div>
 
 </div>
