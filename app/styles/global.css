@@ -4,7 +4,8 @@ body {
 
 .wc {
     max-height: 100px;
-    overflow: hidden;
+    /* overflow: hidden; */
+    position: relative;
     display: flex;
     box-shadow: 0px 0px 10px rgb(199, 199, 199);
     border-style: solid;
@@ -19,6 +20,7 @@ body {
 
 .wc-image-container {
     flex: 1;
+    overflow: hidden;
 }
 
 .wc-image {
@@ -29,6 +31,7 @@ body {
     flex: 3;
     padding-left: 10px;
     height: 100px;
+    overflow: hidden;
 }
 
 .wc-title {
@@ -46,8 +49,8 @@ body {
     width: 28px;
     height: 28px;
     position: absolute;
-    right: 10px;
-    top: 12px;
+    right: 2px;
+    top: 4px;
     color: #000000;
 }
 
