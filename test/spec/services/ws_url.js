@@ -1,18 +1,19 @@
 'use strict';
 
-describe('Service: config', function () {
+describe('Service: WsUrl', function () {
 
   // load the service's module
   beforeEach(module('WebPuzzleFrontApp'));
 
   // instantiate service
   var config;
-  beforeEach(inject(function (_config_) {
-    config = _config_;
+  beforeEach(inject(function (_WsUrl_) {
+    config = _WsUrl_;
   }));
 
   it('should do something', function () {
-    expect(!!config).toBe(true);
+    console.log(config);
+    expect(config).toMatch(/http/);
   });
 
 });
