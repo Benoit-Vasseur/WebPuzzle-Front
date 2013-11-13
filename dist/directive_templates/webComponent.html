@@ -3,7 +3,7 @@
         <img ng-src="{{wc.imageLink}}" class="wc-image"/>
     </div>
     <div class="wc-text">
-        <h3 class="wc-title">{{wc.name}}</h3>
+        <a ui-sref='app.detail({id:wc.id})' ng-click="selectWC.fn(wc)"><h3 class="wc-title">{{wc.name}}</h3></a>
         <p class="wc-description">{{wc.description}}</p>
     </div>
     <a href="{{wc.githubLink}}" target="_blank">
