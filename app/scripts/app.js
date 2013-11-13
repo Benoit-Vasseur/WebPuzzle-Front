@@ -8,6 +8,7 @@ angular.module('WebPuzzleFrontApp', ['ui.router', 'ngDisqus', 'ngAnimate', 'ui.b
 
     $urlRouterProvider.when('', '/app/list');
     $urlRouterProvider.when('/', '/app/list');
+    $urlRouterProvider.when('/app/detail/', '/app/list');
     $urlRouterProvider.otherwise('/app/list');
 
     $stateProvider
@@ -27,7 +28,7 @@ angular.module('WebPuzzleFrontApp', ['ui.router', 'ngDisqus', 'ngAnimate', 'ui.b
         templateUrl: 'views/create.html',
         controller: 'CreateCtrl'
       })
-      .state('app.detailedView',{
+      .state('app.detail',{
         url: '/detail/:id',
         templateUrl: 'views/wcDetailedView.html',
         controller: 'wcDetailedViewCtrl'

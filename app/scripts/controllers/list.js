@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('WebPuzzleFrontApp')
-  .controller('MainCtrl', function ($scope, $http, WsUrl) {
+  .controller('MainCtrl', function ($scope, $rootScope, $http, WsUrl) {
     $scope.webcomponents = [];
 
     //Get data from webservice
@@ -14,6 +14,13 @@ angular.module('WebPuzzleFrontApp')
       }).
       error(function () {
     });
+
+    $scope.selectWC = {fn :  function(wc){
+      console.log( wc);
+      console.log($scope);
+      console.log($rootScope);
+      $rootScope.selectedWC = wc;
+    }};
 
     $scope.filter = {
       text: '',
