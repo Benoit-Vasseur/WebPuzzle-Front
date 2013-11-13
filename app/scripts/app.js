@@ -2,9 +2,9 @@
 
 angular.module('WebPuzzleFrontApp', ['ui.router', 'ngAnimate', 'ui.bootstrap.buttons', 'ui.bootstrap.tooltip', 'template/tooltip/tooltip-popup.html'])
   .config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.when("", "/app/list");
-    $urlRouterProvider.when("/", "/app/list");
-    $urlRouterProvider.otherwise("/app/list");
+    $urlRouterProvider.when('', '/app/list');
+    $urlRouterProvider.when('/', '/app/list');
+    $urlRouterProvider.otherwise('/app/list');
 
     $stateProvider
       .state('app', {
