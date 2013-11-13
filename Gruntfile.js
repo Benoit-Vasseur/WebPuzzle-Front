@@ -245,6 +245,9 @@ module.exports = function (grunt) {
           cwd: '<%= yeoman.app %>',
           dest: '<%= yeoman.dist %>',
           src: [
+            '*.html',
+            'views/*.html',
+            'directive_templates/*.html',
             '*.{ico,png,txt}',
             '.htaccess',
             'bower_components/**/*',
@@ -281,8 +284,8 @@ module.exports = function (grunt) {
         'coffee',
         'copy:styles',
         'imagemin',
-        'svgmin',
-        'htmlmin'
+        'svgmin'
+        //,'htmlmin'
       ]
     },
     karma: {
