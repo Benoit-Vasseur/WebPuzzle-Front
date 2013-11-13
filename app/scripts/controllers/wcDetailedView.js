@@ -4,7 +4,7 @@ angular.module('WebPuzzleFrontApp')
   .controller('wcDetailedViewCtrl', function ($scope,$rootScope, $stateParams, $http, WsUrl) {
     $scope.wc = {
       id: $stateParams.id
-    }
+    };
 
     if(!$scope.selectedWC){}
     $http({
@@ -15,5 +15,5 @@ angular.module('WebPuzzleFrontApp')
         $rootScope.selectedWC = data;
       }).
       error(function () {
-      });
+    });
   });
