@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('WebPuzzleFrontApp')
-    .controller('MainCtrl', function ($scope, $http, WsUrl) {
+    .controller('MainCtrl', function ($scope, $http, WsUrl, UserService, $location) {
         $scope.webcomponents = [];
 
         //Get data from webservice
@@ -67,4 +67,7 @@ angular.module('WebPuzzleFrontApp')
             $scope.filter.filterObject[value] = $scope.filter.text;
         });
 
+        if($location.$$search.auth_token){
+            UserService.setToken($location.$$search.auth_token)
+        }
     });
