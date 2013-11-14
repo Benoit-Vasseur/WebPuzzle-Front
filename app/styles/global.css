@@ -3,7 +3,7 @@ body {
 }
 
 .wc {
-    max-height: 100px;
+    max-height: 120px;
     /* overflow: hidden; */
     position: relative;
     display: flex;
@@ -21,16 +21,19 @@ body {
 .wc-image-container {
     flex: 1;
     overflow: hidden;
+    min-width: 170px;
+    max-width: 170px;
 }
 
 .wc-image {
-    width: 100%;
+    width: 170px;
+    height: 120px;
 }
 
 .wc-text {
     flex: 3;
     padding-left: 10px;
-    height: 100px;
+    height: 140px;
     overflow: hidden;
 }
 
