@@ -1,14 +1,16 @@
-.sorting-selector {
-    float: left;
-    margin-right: 10px;
+@media only screen and (min-width: 768px) {
+    #sorting-selector {
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+    }
 }
 
-.filter-selector {
-    float: left;
+.toolbar-component {
+    margin: 5px 0;
 }
 
 #list-toolbar {
     margin-top: 20px;
     margin-left: 10px;
-    height : 40px;
 }
