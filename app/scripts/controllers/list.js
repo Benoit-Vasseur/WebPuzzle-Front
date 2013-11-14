@@ -3,6 +3,7 @@
 angular.module('WebPuzzleFrontApp')
   .controller('MainCtrl', function ($scope, $rootScope, $http, WsUrl) {
     $scope.webcomponents = [];
+    $scope.wcNumberLimit = 20;
 
     //Get data from webservice
     $http({
@@ -78,4 +79,8 @@ angular.module('WebPuzzleFrontApp')
       $scope.filter.filterObject[value] = $scope.filter.text;
     });
 
+
+    $scope.addMoreComponents = function(){
+      $scope.wcNumberLimit = $scope.wcNumberLimit + 20;
+    }
   });
