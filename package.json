@@ -6,7 +6,9 @@
     "grunt-cli": "~0.1.9",
     "bower": "~1.2.7",
     "yo": "~1.0.4",
-    "generator-angular": "~0.5.1"
+    "generator-angular": "~0.5.1",
+    "gzippo": "~0.2.0",
+    "express": "~3.4.4"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

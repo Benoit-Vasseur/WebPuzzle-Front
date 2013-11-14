@@ -1,0 +1,15 @@
+<div class="detail-body">
+    <img ng-src="{{selectedWC.imageLink}}"/>
+
+    <h1>{{selectedWC.name}}</h1>
+
+    <p>{{selectedWC.description}}</p>
+
+    <p> Submitted by {{selectedWC.submitter}}</p>
+
+    <p><div class="fa fa-github fa-2x"></div> <a href="{{selectedWC.githubLink}}">Link to github repository</a></p>
+
+    <p><a href="{{selectedWC.demoLink}}">List to demo</a></a></p>
+
+    <div disqus="'WC' + wc.id"></div>
+</div>
