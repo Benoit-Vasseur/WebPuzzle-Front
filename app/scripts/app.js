@@ -1,6 +1,5 @@
 'use strict';
 
-
 angular.module('WebPuzzleFrontApp', ['ui.router', 'ngDisqus', 'ngAnimate', 'ui.bootstrap', 'ui.bootstrap.buttons', 'ui.bootstrap.tooltip', 'template/tooltip/tooltip-popup.html'])
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $disqusProvider) {
         $disqusProvider.setShortname('webpuzzle');

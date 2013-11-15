@@ -3,6 +3,7 @@
 angular.module('WebPuzzleFrontApp')
     .controller('MainCtrl', function ($scope, $http, WsUrl, UserService, $location) {
         $scope.webcomponents = [];
+        $scope.wcNumberLimit = 20;
         //Get data from webservice
         $http({
             method: 'GET',
@@ -73,13 +74,13 @@ angular.module('WebPuzzleFrontApp')
         });
 
 
-        if($location.$$search.auth_token){
-            UserService.setToken($location.$$search.auth_token)
-        }
-
         $scope.$watch('selectedFilterType.filter', function (value) {
             $scope.filter.filterObject = {name: '', submitter: ''};
             $scope.filter.filterObject[value] = $scope.filter.text;
         });
 
+        $scope.addMoreComponents = function(){
+            $scope.wcNumberLimit = $scope.wcNumberLimit + 20;
+        }
     });
+

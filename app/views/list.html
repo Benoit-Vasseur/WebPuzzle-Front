@@ -1,27 +1,33 @@
 <div class="container-fluid">
     <div id="list-toolbar">
-        <div class="btn-group sorting-selector">
-            <button ng-repeat="sortingType in sortingTypes" type="button"
-                    class="btn btn-primary" ng-model="selectedSorting.sortingFilterExpr" btn-radio="sortingType.filter">
-                <i ng-class="sortingType.iconCss" tooltip="{{sortingType.name}}" tooltip-placement="bottom"></i>
-            </button>
+        <div class="col-sm-4">
+            <div class="btn-group toolbar-component" id="sorting-selector">
+                <button ng-repeat="sortingType in sortingTypes" type="button"
+                        class="btn btn-primary" ng-model="selectedSorting.sortingFilterExpr" btn-radio="sortingType.filter">
+                    <i ng-class="sortingType.iconCss" tooltip="{{sortingType.name}}" tooltip-placement="bottom"></i>
+                </button>
+            </div>
         </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="input-group">
+        <div class="col-sm-4">
+            <div class="input-group toolbar-component">
                 <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
                 <input type="text" class="form-control" ng-model="filter.text" placeholder="Filter by name">
             </div>
         </div>
-        <div class="btn-group filter-selector">
-            <button ng-repeat="filterType in filterTypes" type="button"
-                    class="btn btn-primary" ng-model="selectedFilterType.filter" btn-radio="filterType.filter">
-                {{filterType.name}}
-            </button>
+        <div class="col-sm-4">
+            <div class="btn-group toolbar-component">
+                <button ng-repeat="filterType in filterTypes" type="button"
+                        class="btn btn-primary" ng-model="selectedFilterType.filter" btn-radio="filterType.filter">
+                    {{filterType.name}}
+                </button>
+            </div>
         </div>
     </div>
 
-    <div ng-repeat="wc in webcomponents | filter:filter.filterObject | orderBy:selectedSorting.sortingFilterExpr"
-         class="wc-container repeat-item col-sm-6 col-md-4 col-lg-3">
-        <web-component/>
+    <div infinite-scroll="addMoreComponents()" infinite-scroll-distance='1' style="display: inline-block">
+        <div ng-repeat="wc in webcomponents | filter:filter.filterObject | orderBy:selectedSorting.sortingFilterExpr | limitTo:wcNumberLimit"
+             class="wc-container repeat-item col-md-6 col-lg-4">
+            <web-component/>
+        </div>
     </div>
 </div>
