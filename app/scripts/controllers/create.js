@@ -20,7 +20,7 @@ angular.module('WebPuzzleFrontApp')
                 method: 'POST',
                 url: WsUrl + 'web_components.json',
                 data: webComponent,
-                params: {access_token: UserService.getToken()}
+                params: {auth_token: UserService.getToken()}
             }).
                 success(function (data, status) {
                     $scope.status = status;
