@@ -17,7 +17,8 @@
     "tag": "0.6.0",
     "commit": "8e5bcf5bdeda4b67c286bdaa27e8c4a13f5b6fff"
   },
-  "_source": "https://github.com/angular-ui/bootstrap-bower.git",
+  "_source": "git://github.com/angular-ui/bootstrap-bower.git",
   "_target": "~0.6.0",
-  "_originalSource": "angular-ui-bootstrap-bower"
+  "_originalSource": "angular-ui-bootstrap-bower",
+  "_direct": true
 }
