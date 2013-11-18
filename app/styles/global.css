@@ -3,15 +3,11 @@ body {
 }
 
 .wc {
-    max-height: 120px;
-    /* overflow: hidden; */
     position: relative;
-    display: flex;
     box-shadow: 0px 0px 10px rgb(199, 199, 199);
     border-style: solid;
     border-width: 1px;
     border-color: rgb(199, 199, 199);
-    /* border-radius: 3px; */
 }
 
 .wc-container {
@@ -19,21 +15,20 @@ body {
 }
 
 .wc-image-container {
-    flex: 1;
     overflow: hidden;
-    min-width: 170px;
-    max-width: 170px;
 }
 
 .wc-image {
+    position: absolute;
+    left: 0px;
     width: 170px;
     height: 120px;
 }
 
 .wc-text {
-    flex: 3;
+    margin-left: 170px;
     padding-left: 10px;
-    height: 140px;
+    height: 120px;
     overflow: hidden;
 }
 
