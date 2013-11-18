@@ -4,3 +4,5 @@ node_modules
 app/bower_components
 /.idea/*
 node_modules/
+
+.DS_Store
