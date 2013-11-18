@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div infinite-scroll="addMoreComponents()" infinite-scroll-distance='1' style="display: inline-block">
+    <div infinite-scroll="addMoreComponents()" infinite-scroll-distance='1' id="infinite-container">
         <div ng-repeat="wc in webcomponents | filter:filter.filterObject | orderBy:selectedSorting.sortingFilterExpr | limitTo:wcNumberLimit"
              class="wc-container repeat-item col-md-6 col-lg-4">
             <web-component/>
