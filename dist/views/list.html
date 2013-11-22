@@ -1,10 +1,14 @@
 <div class="container-fluid">
     <div id="list-toolbar">
         <div class="col-sm-4">
-            <div class="btn-group toolbar-component" id="sorting-selector">
-                <button ng-repeat="sortingType in sortingTypes" type="button"
+            <div id="sorting-tooltip">
+                {{sortingTooltip.text}}
+            </div>
+            <div ng-mouseleave="sortingTooltip.text = ''" class="btn-group toolbar-component" id="sorting-selector">
+                <button ng-repeat="sortingType in sortingTypes" type="button" ng-mouseover="sortingTooltip.text = sortingType.name"
                         class="btn btn-primary" ng-model="selectedSorting.sortingFilterExpr" btn-radio="sortingType.filter">
-                    <i ng-class="sortingType.iconCss" tooltip="{{sortingType.name}}" tooltip-placement="bottom"></i>
+                    <i ng-class="sortingType.iconCss" >
+                    </i>
                 </button>
             </div>
         </div>

@@ -16,9 +16,9 @@
             <ul class="nav navbar-nav navbar-right">
                 <li ng-show="!isConnected()"><a ng-href="{{authentUrl}}">Sign in with Github</a></li>
                 <li ng-show="isConnected()" class="dropdown">
-                    <a href="#!" class="dropdown-toggle" ng-model="user" data-toggle="dropdown"><img style="padding:0px" height="30" ng-src="{{user.avatar_url}}"/> {{user.login}} <b class="caret"></b></a>
+                    <a href="#!" style="height: 50px" class="dropdown-toggle" ng-model="user" data-toggle="dropdown"><img style="padding:0px; height: 20px" ng-src="{{user.avatar_url}}"/> {{user.login}} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a ng-click="signOut()">Sign out</a></li>
+                        <li><a href="#!" ng-click="signOut()">Sign out</a></li>
                     </ul>
                 </li>
             </ul>
