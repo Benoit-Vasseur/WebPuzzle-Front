@@ -25,7 +25,7 @@ angular.module('WebPuzzleFrontApp', ['ui.router', 'ngDisqus', 'ngAnimate', 'ui.b
       .state('app.list', {
         url: '/list',
         templateUrl: 'views/list.html',
-        controller: 'MainCtrl'
+        controller: 'ListCtrl'
       })
       .state('app.create', {
         url: '/create',

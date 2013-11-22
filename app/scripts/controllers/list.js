@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('WebPuzzleFrontApp')
-  .controller('MainCtrl', function ($rootScope, $scope, $http, WsUrl) {
+  .controller('ListCtrl', function ($rootScope, $scope, $http, WsUrl) {
     $scope.webcomponents = [];
     $scope.wcNumberLimit = 20;
     //Get data from webservice
