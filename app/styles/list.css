@@ -19,3 +19,12 @@
     display: inline-block;
     width: 100%;
 }
+
+#sorting-tooltip {
+    position: absolute;
+    font-weight: bold;
+    right: 0;
+    top: -17px;
+    margin-right: 20px;
+    height : 0;
+}

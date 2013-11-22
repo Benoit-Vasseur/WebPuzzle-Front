@@ -29,7 +29,7 @@ angular.module('WebPuzzleFrontApp')
 
     $scope.sortingTypes = [
       {
-        'name': 'ascending alphabetical order',
+        'name': 'Ascending alphabetical order',
         'iconCss': 'fa fa-sort-alpha-asc',
         'filter': 'name'
       },
@@ -51,6 +51,8 @@ angular.module('WebPuzzleFrontApp')
     ];
 
     $scope.selectedSorting = {sortingFilterExpr: 'name'};
+
+    $scope.sortingTooltip = {text : ''};
 
     $scope.filterTypes = [
       {
