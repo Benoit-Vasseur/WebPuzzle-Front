@@ -41,6 +41,7 @@ body {
 }
 
 .wc-description {
+    margin-right: 35px;
 }
 
 .icon-github {
@@ -49,6 +50,23 @@ body {
     position: absolute;
     right: 2px;
     top: 4px;
+    color: #999999;
+}
+
+.icon-github:hover {
+    color: #000000;
+}
+
+.icon-download {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 2px;
+    top: 36px;
+    color: #999999;
+}
+
+.icon-download:hover {
     color: #000000;
 }
 
