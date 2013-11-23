@@ -4,6 +4,20 @@
         right: 0;
         margin-right: 20px;
     }
+
+    #sorting-tooltip {
+        right: 0;
+        top: -17px;
+        height : 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #sorting-tooltip {
+        right: 0;
+        top: 8px;
+        font-size: large;
+    }
 }
 
 .toolbar-component {
@@ -23,8 +37,5 @@
 #sorting-tooltip {
     position: absolute;
     font-weight: bold;
-    right: 0;
-    top: -17px;
     margin-right: 20px;
-    height : 0;
 }
