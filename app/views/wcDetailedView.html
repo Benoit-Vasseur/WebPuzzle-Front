@@ -1,21 +1,22 @@
-<div class="detail-body">
-    <img ng-src="{{selectedWC.imageLink}}"/>
+<div id="detail-body" >
+    <div id="detail-wc">
+        <div id="detail-image" class="col-sm-4">
+            <img ng-src="{{selectedWC.imageLink}}"/>
+        </div>
+        <div class="col-md-8">
+            <h1>{{selectedWC.name}}</h1>
+            <p>{{selectedWC.description}}</p>
 
-    <h1>{{selectedWC.name}}</h1>
+            <a class="btn btn-default" href="{{selectedWC.githubLink + '/archive/master.zip'}}">
+                <i class="fa fa-download"></i> Download
+            </a>
 
-    <p>{{selectedWC.description}}</p>
+            <a class="btn btn-default" href="{{selectedWC.githubLink}}" target="_blank">
+                <i class="fa fa-github"></i>  Github repository
+            </a>
 
-    <p> Submitted by {{selectedWC.submitter}}</p>
-
-    <a class="btn btn-default" href="{{selectedWC.githubLink + '/archive/master.zip'}}">
-        <i class="fa fa-download"></i> Download
-    </a>
-
-    <a class="btn btn-default" href="{{selectedWC.githubLink}}" target="_blank">
-        <i class="fa fa-github"></i>  Github repository
-    </a>
-
-    <p><a href="{{selectedWC.demoLink}}">Link to demo</a></a></p>
-
+            <p style="margin: 20px 0"><a href="{{selectedWC.demoLink}}">Link to demo</a></a></p>
+        </div>
+    </div>
     <div disqus="'WC' + wc.id"></div>
 </div>
