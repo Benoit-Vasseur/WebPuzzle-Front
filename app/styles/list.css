@@ -14,9 +14,9 @@
 
 @media only screen and (max-width: 768px) {
     #sorting-tooltip {
-        right: 0;
-        top: 8px;
-        font-size: large;
+        left: 16px;
+        top: -16px;
+        font-size: 0.9em;
     }
 }
 
