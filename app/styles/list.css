@@ -1,11 +1,11 @@
 @media only screen and (min-width: 768px) {
-    #sorting-selector {
+    #list-sorting-selector {
         position: absolute;
         right: 0;
         margin-right: 20px;
     }
 
-    #sorting-tooltip {
+    .list-sorting-tooltip {
         right: 0;
         top: -17px;
         height : 0;
@@ -13,14 +13,14 @@
 }
 
 @media only screen and (max-width: 768px) {
-    #sorting-tooltip {
+    .list-sorting-tooltip {
         left: 16px;
         top: -16px;
         font-size: 0.9em;
     }
 }
 
-.toolbar-component {
+.list-toolbar-component {
     margin: 5px 0;
 }
 
@@ -29,13 +29,34 @@
     margin-left: 10px;
 }
 
-#infinite-container {
+#list-infinite-container {
     display: inline-block;
     width: 100%;
 }
 
-#sorting-tooltip {
+.list-sorting-tooltip {
     position: absolute;
     font-weight: bold;
     margin-right: 20px;
+}
+
+.list-detail-sorting-tooltip {
+    display: none;
+}
+
+.list-body {
+    display: inline-block;
+    width: 35%;
+}
+
+#list-detail-view {
+    display: inline-block;
+    width: 65%;
+    vertical-align: top;
+}
+
+.list-detail-sorting-selector {
+    position: relative;
+    top: 40px;
+    right: -10px;
 }

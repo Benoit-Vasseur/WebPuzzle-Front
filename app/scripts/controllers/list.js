@@ -1,9 +1,17 @@
 'use strict';
 
 angular.module('WebPuzzleFrontApp')
-  .controller('ListCtrl', function ($rootScope, $scope, $http, WsUrl) {
+  .controller('ListCtrl', function ($rootScope, $scope, $http,  WsUrl) {
     $scope.webcomponents = [];
     $scope.wcNumberLimit = 20;
+    //getting child state name
+
+    $scope.$on('$stateChangeSuccess',
+      function(event, toState){
+        var state = toState.name.match(/([^\.]*$)/)[0];
+        $scope.viewMode = { state : state};
+      });
+
     //Get data from webservice
     $http({
       method: 'GET',

@@ -1,10 +1,11 @@
-<div class="wc">
+<div class="wc" ng-init="hovering = false" ng-mouseover="hovering = true" ng-mouseleave="hovering = false">
     <div class="wc-image-container">
-        <img ng-src="{{wc.imageLink}}" class="wc-image"/>
+        <a ng-show="wcClickable" ui-sref='app.list.detail({id:wc.id})' ng-click="selectWC.fn(wc)">
+            <img ng-src="{{wc.imageLink}}" class="wc-image"/>
+        </a>
     </div>
-    <div class="wc-text" ng-init="hovering = false" ng-mouseover="hovering = true" ng-mouseleave="hovering = false">
-
-        <a ng-show="wcClickable" ui-sref='app.detail({id:wc.id})' ng-click="selectWC.fn(wc)">
+    <div class="wc-text">
+        <a ng-show="wcClickable" ui-sref='app.list.detail({id:wc.id})' ng-click="selectWC.fn(wc)">
             <h3 class="wc-title" ng-class="{'hovering':hovering}">
                 {{wc.name}}
             </h3>
@@ -14,7 +15,7 @@
                 {{wc.name}}
             </h3>
         </a>
-        <a ng-show="wcClickable" ui-sref='app.detail({id:wc.id})' ng-click="selectWC.fn(wc)">
+        <a ng-show="wcClickable" ui-sref='app.list.detail({id:wc.id})' ng-click="selectWC.fn(wc)">
             <p class="wc-description" ng-class="{'hovering':hovering}">
                 {{wc.description}}
             </p>
