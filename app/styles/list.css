@@ -20,6 +20,30 @@
     }
 }
 
+@media only screen and (min-width: 1001px) {
+    .list-body {
+        display: inline-block;
+        width: 35%;
+    }
+
+    #list-detail-view {
+        display: inline-block;
+        width: 65%;
+        vertical-align: top;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .list-body {
+        display: none;
+    }
+
+    #list-detail-view {
+        width: 100%;
+    }
+}
+
+
 .list-toolbar-component {
     margin: 5px 0;
 }
@@ -42,17 +66,6 @@
 
 .list-detail-sorting-tooltip {
     display: none;
-}
-
-.list-body {
-    display: inline-block;
-    width: 35%;
-}
-
-#list-detail-view {
-    display: inline-block;
-    width: 65%;
-    vertical-align: top;
 }
 
 .list-detail-sorting-selector {
