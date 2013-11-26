@@ -1,0 +1,96 @@
+
+.wc {
+    position: relative;
+    box-shadow: 0px 0px 10px rgb(199, 199, 199);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(199, 199, 199);
+}
+
+.wc-container {
+    padding: 8px;
+}
+
+.wc-image-container {
+    overflow: hidden;
+}
+
+.wc-image {
+    position: absolute;
+    left: 0px;
+    width: 170px;
+    height: 120px;
+}
+
+.wc-text {
+    margin-left: 170px;
+    padding-left: 10px;
+    height: 120px;
+    overflow: hidden;
+}
+
+.wc-title {
+    margin-top: 8px;
+    margin-bottom: 5px;
+    margin-right: 35px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.wc-description {
+    margin-right: 35px;
+}
+
+.icon-github {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 2px;
+    top: 4px;
+    color: #999999;
+}
+
+.icon-github:hover {
+    color: #000000;
+}
+
+.icon-download {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 2px;
+    top: 36px;
+    color: #999999;
+}
+
+.icon-download:hover {
+    color: #000000;
+}
+
+.github-tooltip {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    position: relative;
+    top: -26px;
+    right: 2px;
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave{
+    -webkit-transition:0.3s linear all;
+    -moz-transition:0.3s linear all;
+    -o-transition:0.3s linear all;
+    transition:0.3s linear all;
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave.ng-leave-active {
+    opacity:0;
+    -webkit-transform: scale(0.5);
+}
+.repeat-item.ng-leave,
+.repeat-item.ng-enter.ng-enter-active {
+    opacity:1;
+    -webkit-transform: scale(1);
+}
