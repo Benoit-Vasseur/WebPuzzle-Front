@@ -1,4 +1,3 @@
-
 .wc {
     position: relative;
     box-shadow: 0px 0px 10px rgb(199, 199, 199);
@@ -22,6 +21,11 @@
     height: 120px;
 }
 
+.wc-text a:hover {
+    text-decoration: none;
+}
+
+
 .wc-text {
     margin-left: 170px;
     padding-left: 10px;
@@ -30,6 +34,7 @@
 }
 
 .wc-title {
+    color: #525252;
     margin-top: 8px;
     margin-bottom: 5px;
     margin-right: 35px;
@@ -37,8 +42,17 @@
     overflow: hidden;
 }
 
+.wc-title.hovering{
+    color: #1b1b1b;
+}
+
 .wc-description {
     margin-right: 35px;
+    color: #8c8c8c;
+}
+
+.wc-description.hovering {
+    color: rgb(49, 49, 49);
 }
 
 .icon-github {
@@ -51,7 +65,7 @@
 }
 
 .icon-github:hover {
-    color: #000000;
+    color: #1b1b1b;
 }
 
 .icon-download {
@@ -64,7 +78,7 @@
 }
 
 .icon-download:hover {
-    color: #000000;
+    color: #1b1b1b;
 }
 
 .github-tooltip {
