@@ -1,9 +1,17 @@
 'use strict';
 
 angular.module('WebPuzzleFrontApp')
-  .controller('MainCtrl', function ($rootScope, $scope, $http, WsUrl) {
+  .controller('ListCtrl', function ($rootScope, $scope, $http,  WsUrl) {
     $scope.webcomponents = [];
     $scope.wcNumberLimit = 20;
+    //getting child state name
+
+    $scope.$on('$stateChangeSuccess',
+      function(event, toState){
+        var state = toState.name.match(/([^\.]*$)/)[0];
+        $scope.viewMode = { state : state};
+      });
+
     //Get data from webservice
     $http({
       method: 'GET',
@@ -29,7 +37,7 @@ angular.module('WebPuzzleFrontApp')
 
     $scope.sortingTypes = [
       {
-        'name': 'ascending alphabetical order',
+        'name': 'Ascending alphabetical order',
         'iconCss': 'fa fa-sort-alpha-asc',
         'filter': 'name'
       },
@@ -51,6 +59,8 @@ angular.module('WebPuzzleFrontApp')
     ];
 
     $scope.selectedSorting = {sortingFilterExpr: 'name'};
+
+    $scope.sortingTooltip = {text : ''};
 
     $scope.filterTypes = [
       {

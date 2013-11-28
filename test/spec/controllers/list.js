@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: ListCtrl', function () {
 
   // load the controller's module
   beforeEach(module('WebPuzzleFrontApp'));
@@ -11,12 +11,12 @@ describe('Controller: MainCtrl', function () {
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    MainCtrl = $controller('ListCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.sortingTypes[0].name).toBe('ascending alphabetical order');
+  it('Should contain a sorting type', function () {
+    expect(scope.sortingTypes[0].name).toBe('Ascending alphabetical order');
   });
 });

@@ -22,19 +22,19 @@ angular.module('WebPuzzleFrontApp', ['ui.router', 'ngDisqus', 'ngAnimate', 'ui.b
         url: '^/auth/:provider/end/:finaltoken',
         controller: 'AuthendCtrl'
       })
-      .state('app.list', {
-        url: '/list',
-        templateUrl: 'views/list.html',
-        controller: 'MainCtrl'
-      })
       .state('app.create', {
         url: '/create',
         templateUrl: 'views/create.html',
         controller: 'CreateCtrl'
       })
-      .state('app.detail', {
+      .state('app.list', {
+        url: '/list',
+        templateUrl: 'views/list.html',
+        controller: 'ListCtrl'
+      })
+      .state('app.list.detail', {
         url: '/detail/:id',
-        templateUrl: 'views/wcDetailedView.html',
+        templateUrl: 'views/detail.html',
         controller: 'wcDetailedViewCtrl'
       });
   });

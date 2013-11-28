@@ -1,12 +1,50 @@
 @media only screen and (min-width: 768px) {
-    #sorting-selector {
+    #list-sorting-selector {
         position: absolute;
         right: 0;
         margin-right: 20px;
     }
+
+    .list-sorting-tooltip {
+        right: 0;
+        top: -17px;
+        height : 0;
+    }
 }
 
-.toolbar-component {
+@media only screen and (max-width: 768px) {
+    .list-sorting-tooltip {
+        left: 16px;
+        top: -16px;
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+    .list-body {
+        display: inline-block;
+        width: 35%;
+    }
+
+    #list-detail-view {
+        display: inline-block;
+        width: 65%;
+        vertical-align: top;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .list-body {
+        display: none;
+    }
+
+    #list-detail-view {
+        width: 100%;
+    }
+}
+
+
+.list-toolbar-component {
     margin: 5px 0;
 }
 
@@ -15,7 +53,23 @@
     margin-left: 10px;
 }
 
-#infinite-container {
+#list-infinite-container {
     display: inline-block;
     width: 100%;
+}
+
+.list-sorting-tooltip {
+    position: absolute;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.list-detail-sorting-tooltip {
+    display: none;
+}
+
+.list-detail-sorting-selector {
+    position: relative;
+    top: 40px;
+    right: -10px;
 }
