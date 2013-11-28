@@ -38,8 +38,8 @@ module.exports = function (grunt) {
         tasks: ['coffee:test']
       },
       styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['copy:styles', 'autoprefixer']
+        files: ['<%= yeoman.app %>/styles/{,*/}*.css', '<%= yeoman.app %>/styles/{,*/}*.scss', '<%= yeoman.app %>/styles/{,*/}*.sass'],
+        tasks: ['copy:styles', 'sass', 'autoprefixer']
       },
       livereload: {
         options: {
@@ -51,6 +51,21 @@ module.exports = function (grunt) {
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
+      }
+    },
+    sass: {
+      dist: {
+        options: {
+          sourcemap: true,
+          loadPath: '.tmp/styles/bootstrap'
+        },
+        files: [{
+          expand: true,
+          cwd: '.tmp/styles/',
+          src: ['{,*/}*.scss','{,*/}*.sass','!{,*/}_*.scss','!{,*/}_*.sass'],
+          dest: '.tmp/styles/',
+          ext: '.css'
+        }]
       }
     },
     autoprefixer: {
@@ -268,7 +283,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
-        src: '{,*/}*.css'
+        src: ['{,*/}*.css','{,*/}*.scss','{,*/}*.sass']
       }
     },
     concurrent: {
@@ -328,6 +343,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
+      'sass',
       'autoprefixer',
       'connect:livereload',
       'open',
@@ -347,6 +363,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
+    'sass',
     'autoprefixer',
     'concat',
     'copy:dist',
