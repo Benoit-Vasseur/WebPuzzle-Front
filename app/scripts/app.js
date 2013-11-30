@@ -23,9 +23,18 @@ angular.module('WebPuzzleFrontApp', ['ui.router', 'ngDisqus', 'ngAnimate', 'ui.b
         controller: 'AuthendCtrl'
       })
       .state('app.create', {
-        url: '/create',
-        templateUrl: 'views/create.html',
-        controller: 'CreateCtrl'
+        abstract: true,
+        templateUrl: 'views/create/create.html'
+      })
+      .state('app.create.github', {
+        url: '/create/github',
+        templateUrl: 'views/create/github.html',
+        controller: 'CreateGithubCtrl'
+      })
+      .state('app.create.additionalInfo', {
+        url: '/create/additionalInfos/:userName/:repo',
+        templateUrl: 'views/create/additionalInfo.html',
+        controller: 'CreateAdditionalInfoCtrl'
       })
       .state('app.list', {
         url: '/list',

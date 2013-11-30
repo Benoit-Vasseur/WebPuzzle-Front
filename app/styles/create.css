@@ -3,6 +3,10 @@
     margin: 20px 10px 20px 10px;
 }
 
+form.create-form .form-group {
+    margin-bottom: 35px;
+}
+
 form .form-group span.help-block {
     margin-bottom: 0px;
 }
