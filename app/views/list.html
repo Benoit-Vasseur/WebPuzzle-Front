@@ -6,7 +6,7 @@
                 {{sortingTooltip.text}}
             </div>
             <div ng-mouseleave="sortingTooltip.text = ''" class="btn-group list-toolbar-component" id="list-sorting-selector">
-                <button ng-repeat="sortingType in sortingTypes" type="button" ng-mouseover="sortingTooltip.text = sortingType.name"
+                <button title="{{(viewMode.state === 'list') ? '' : sortingTooltip.text}}" ng-repeat="sortingType in sortingTypes" type="button" ng-mouseover="sortingTooltip.text = sortingType.name"
                         class="btn btn-primary" ng-model="selectedSorting.sortingFilterExpr" btn-radio="sortingType.filter">
                     <i ng-class="sortingType.iconCss" ></i>
                 </button>
