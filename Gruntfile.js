@@ -53,6 +53,12 @@ module.exports = function (grunt) {
         ]
       }
     },
+    preprocess : {
+      prod : {
+        src : '<%= yeoman.dist %>/scripts/scripts.js',
+        dest : '<%= yeoman.dist %>/scripts/scripts.js'
+      }
+    },
     sass: {
       dist: {
         options: {
@@ -368,6 +374,7 @@ module.exports = function (grunt) {
     'concat',
     'copy:dist',
     'cdnify',
+    'preprocess:prod',
     'ngmin',
     'cssmin',
     'uglify',
