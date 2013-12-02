@@ -20,6 +20,11 @@
                 {{wc.description}}
             </p>
         </a>
+        <a ng-show="!wcClickable">
+            <p class="wc-description" ng-class="{'hovering':hovering}">
+                {{wc.description}}
+            </p>
+        </a>
     </div>
     <a href="{{(wcClickable)? wc.githubLink : ''}}" target="_blank">
         <div class="fa fa-github fa-2x icon-github">
