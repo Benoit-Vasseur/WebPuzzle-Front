@@ -1,0 +1,53 @@
+<div class="container-fluid" >
+
+    <div class="col-md-offset-1 col-xs-10">
+        <h1>Github link of the Web Component</h1>
+        <p>You can directly enter a github link or choose one of Github repo</p>
+
+        <form name="githubLinkWCForm" role="form" novalidate>
+            <div style="display: inline-block;height: 100%;width: 100%;">
+                <div class="col-xs-6">
+                    <h2>Enter a Github link</h2>
+                    <div class="row">
+                        <div>
+                            <div class="col-sm-12">
+                                <div class="form-group" ng-class="{'has-error': (overOnSubmitForm || submitClick ) && githubLinkWCForm.githubLinkWC.$invalid }">
+                                    <input class="form-control"
+                                           name="githubLinkWC" ng-model="wc.githubLink" placeholder="{{inputPlaceholder}}" required github-repo-link />
+
+                                    <span style="position: absolute" ng-show="(overOnSubmitForm || submitClick) && githubLinkWCForm.githubLinkWC.$invalid" class="help-block">
+                                        a right github link repo is required
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 50px" >
+                        <div style="display: inline-block" ng-init="overOnSubmitForm = false; submitClick = false" ng-mouseover="overOnSubmitForm = true" ng-mouseleave="overOnSubmitForm = false" ng-click="submitClick = true">
+                            <button class="btn btn-default btn-lg"
+                                    ng-class="{'btn-danger': overOnSubmitForm && githubLinkWCForm.$invalid}"
+                                    ng-disabled="githubLinkWCForm.$invalid"
+                                    ng-click="submitForm(wc.githubLink)">
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-1"><h2>Or</h2></div>
+                <div class="col-xs-5">
+                    <h2>Choose one of your repository</h2>
+                    <div ng-mouseleave="hoveringUserRepo = false" ng-mouseover="hoveringUserRepo = true" style="height: 210px; overflow: auto">
+                        <div ng-repeat="repo in userRepos">
+                            <p class="create-user-repo" ng-mouseover="changeInputPlaceholder(repo.html_url)" ng-click="goToAdditionalInfo(repo.owner.login, repo.name)">
+                                {{repo.name}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+
+</div>
