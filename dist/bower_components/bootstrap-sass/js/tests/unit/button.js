@@ -18,9 +18,9 @@ $(function () {
 
       test("should return set state to loading", function () {
         var btn = $('<button class="btn" data-loading-text="fat">mdo</button>')
-        equal(btn.html(), 'mdo', 'btn text equals mdo')
+        equals(btn.html(), 'mdo', 'btn text equals mdo')
         btn.button('loading')
-        equal(btn.html(), 'fat', 'btn text equals fat')
+        equals(btn.html(), 'fat', 'btn text equals fat')
         stop()
         setTimeout(function () {
           ok(btn.attr('disabled'), 'btn is disabled')
@@ -31,9 +31,9 @@ $(function () {
 
       test("should return reset state", function () {
         var btn = $('<button class="btn" data-loading-text="fat">mdo</button>')
-        equal(btn.html(), 'mdo', 'btn text equals mdo')
+        equals(btn.html(), 'mdo', 'btn text equals mdo')
         btn.button('loading')
-        equal(btn.html(), 'fat', 'btn text equals fat')
+        equals(btn.html(), 'fat', 'btn text equals fat')
         stop()
         setTimeout(function () {
           ok(btn.attr('disabled'), 'btn is disabled')
@@ -41,7 +41,7 @@ $(function () {
           start()
           stop()
           btn.button('reset')
-          equal(btn.html(), 'mdo', 'btn text equals mdo')
+          equals(btn.html(), 'mdo', 'btn text equals mdo')
           setTimeout(function () {
             ok(!btn.attr('disabled'), 'btn is not disabled')
             ok(!btn.hasClass('disabled'), 'btn does not have disabled class')
