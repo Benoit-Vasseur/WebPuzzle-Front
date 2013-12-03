@@ -3,6 +3,11 @@
 angular.module('WebPuzzleFrontApp')
   .factory('WsUrl', function () {
     var webServiceUrl = 'http://webpuzzlews.herokuapp.com/';
-    //var webServiceUrl = 'http://localhost:3000/';
+
+    //Local configuration, removed at build time
+    //@exclude
+    webServiceUrl = 'http://localhost:3000/';
+    //@endexclude
+
     return webServiceUrl;
   });

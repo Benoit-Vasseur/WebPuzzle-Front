@@ -53,6 +53,12 @@ module.exports = function (grunt) {
         ]
       }
     },
+    preprocess : {
+      prod : {
+        src : '<%= yeoman.dist %>/scripts/scripts.js',
+        dest : '<%= yeoman.dist %>/scripts/scripts.js'
+      }
+    },
     sass: {
       dist: {
         options: {
@@ -246,7 +252,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'views/*.html', 'directive_templates/*.html'],
+          src: ['*.html', 'views/{,*/}*.html', 'directive_templates/*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -261,7 +267,7 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             '*.html',
-            'views/*.html',
+            'views/{,*/}*.html',
             'directive_templates/*.html',
             '*.{ico,png,txt}',
             '.htaccess',
@@ -368,6 +374,7 @@ module.exports = function (grunt) {
     'concat',
     'copy:dist',
     'cdnify',
+    'preprocess:prod',
     'ngmin',
     'cssmin',
     'uglify',

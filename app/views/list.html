@@ -6,7 +6,7 @@
                 {{sortingTooltip.text}}
             </div>
             <div ng-mouseleave="sortingTooltip.text = ''" class="btn-group list-toolbar-component" id="list-sorting-selector">
-                <button ng-repeat="sortingType in sortingTypes" type="button" ng-mouseover="sortingTooltip.text = sortingType.name"
+                <button title="{{(viewMode.state === 'list') ? '' : sortingTooltip.text}}" ng-repeat="sortingType in sortingTypes" type="button" ng-mouseover="sortingTooltip.text = sortingType.name"
                         class="btn btn-primary" ng-model="selectedSorting.sortingFilterExpr" btn-radio="sortingType.filter">
                     <i ng-class="sortingType.iconCss" ></i>
                 </button>
@@ -31,7 +31,7 @@
     </div>
 
     <!-- WebComponent list -->
-    <div infinite-scroll="addMoreComponents()" infinite-scroll-distance='1' id="list-infinite-container">
+    <div infinite-scroll="addMoreComponents()" infinite-scroll-distance='1' ng-class="{list : 'list-infinite-container', detail : 'list-detail-infinite-container'}[viewMode.state]">
         <div ng-repeat="wc in webcomponents | filter:filter.filterObject | orderBy:selectedSorting.sortingFilterExpr | limitTo:wcNumberLimit"
              class="wc-container repeat-item" ng-class="{list : 'col-md-6 col-lg-4', detail : ''}[viewMode.state]">
             <web-component/>

@@ -1,0 +1,59 @@
+<div class="col-md-6">
+    <form name="webComponentForm" role="form" class="form-horizontal create-form" novalidate>
+        <div class="form-group">
+            <label for="githubLinkWC" class="col-md-2 control-label">Github link</label>
+            <div class="col-md-10">
+                <p id="githubLinkWC" class="form-control-static">{{wc.githubLink}}
+                    <span id="remove-icon-github-link"class="glyphicon glyphicon-remove" style="margin-left: 40px" ng-click="goBack()"></span>
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ng-class="{'has-error': (overOnSubmitForm || submitClick) && webComponentForm.nameWC.$invalid}">
+            <label for="nameWC" class="col-md-2 control-label">Name&nbsp;*</label>
+            <div class="col-md-10">
+                <input type="text" ng-model="wc.name" name="nameWC" class="form-control" id="nameWC" required placeholder="Your WC's name"/>
+                <span style="position: absolute" ng-show="(overOnSubmitForm || submitClick) && webComponentForm.nameWC.$invalid" class="help-block">A name is required</span>
+            </div>
+
+        </div>
+        <div class="form-group" ng-class="{'has-error': (overOnSubmitForm || submitClick) && webComponentForm.descriptionWC.$invalid }">
+            <label for="descriptionWC" class="col-md-2 control-label">Description&nbsp;*</label>
+            <div class="col-md-10">
+                <textarea ng-model="wc.description" class="form-control" name="descriptionWC" id="descriptionWC" required placeholder="Your description" />
+                <span style="position: absolute" ng-show="(overOnSubmitForm || submitClick) && webComponentForm.descriptionWC.$invalid" class="help-block">A Description is required</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="imageLinkWC" class="col-md-2 control-label">Image link</label>
+            <div class="col-md-10">
+                <input type="text" ng-model="wc.imageLink" class="form-control" id="imageLinkWC" placeholder="image link of your WC"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="demoLinkWC" class="col-md-2 control-label">Demo link</label>
+            <div class="col-md-10">
+                <input type="text" ng-model="wc.demoLink" class="form-control" id="demoLinkWC" placeholder="A link to a demo of yout WC (ex: jsFiddle, codePen ...)"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10" >
+                <div ng-init="overOnSubmitForm = false; submitClick = false" ng-mouseover="overOnSubmitForm = true" ng-mouseleave="overOnSubmitForm = false" ng-click="submitClick = true" style="display: inline-block">
+                    <button ng-click="saveWC(wc)" ng-class="{'btn-danger': overOnSubmitForm && webComponentForm.$invalid}"
+                            ng-disabled="webComponentForm.$invalid" class="btn btn-default">
+                        Register
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div>{{ wc | json  }}</div>
+    <div>{{ data | json }}</div>
+</div>
+
+<div class="col-md-6">
+    <h1>Preview</h1>
+    <web-component clickable="false"/>
+</div>

@@ -22,5 +22,6 @@
   },
   "_source": "git://github.com/kirstein/angular-disqus.git",
   "_target": "~1.1.0",
-  "_originalSource": "angular-disqus"
+  "_originalSource": "angular-disqus",
+  "_direct": true
 }
