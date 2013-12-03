@@ -8,9 +8,7 @@
     "yo": "~1.0.4",
     "generator-angular": "~0.5.1",
     "gzippo": "~0.2.0",
-    "express": "~3.4.4"
-  },
-  "devDependencies": {
+    "express": "~3.4.4",
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
@@ -36,6 +34,9 @@
     "grunt-google-cdn": "~0.2.0",
     "grunt-ngmin": "~0.0.2",
     "time-grunt": "~0.1.0",
+    "grunt-preprocess": "~3.0.1"
+  },
+  "devDependencies": {
     "karma-ng-scenario": "~0.1.0",
     "grunt-karma": "~0.6.2",
     "karma-script-launcher": "~0.1.0",
@@ -49,8 +50,7 @@
     "karma": "~0.10.2",
     "karma-ng-html2js-preprocessor": "~0.1.0",
     "karma-brackets": "0.0.1",
-    "karma-ie-launcher": "~0.1.1",
-    "grunt-preprocess": "~3.0.1"
+    "karma-ie-launcher": "~0.1.1"
   },
   "engines": {
     "node": ">=0.8.0"
