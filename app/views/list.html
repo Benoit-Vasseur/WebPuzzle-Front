@@ -31,7 +31,7 @@
     </div>
 
     <!-- WebComponent list -->
-    <div infinite-scroll="addMoreComponents()" infinite-scroll-distance='1' id="list-infinite-container">
+    <div infinite-scroll="addMoreComponents()" infinite-scroll-distance='1' ng-class="{list : 'list-infinite-container', detail : 'list-detail-infinite-container'}[viewMode.state]">
         <div ng-repeat="wc in webcomponents | filter:filter.filterObject | orderBy:selectedSorting.sortingFilterExpr | limitTo:wcNumberLimit"
              class="wc-container repeat-item" ng-class="{list : 'col-md-6 col-lg-4', detail : ''}[viewMode.state]">
             <web-component/>
