@@ -311,6 +311,16 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    bower: {
+      install: {
+        options: {
+          targetDir: '<%= yeoman.app%>/bower_components',
+          bowerOptions: {
+            production: true
+          }
+        }
+      }
     }
   });
 
@@ -356,6 +366,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('heroku:production', [
+    'bower:install',
     'build'
   ]);
 
