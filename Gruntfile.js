@@ -44,8 +44,8 @@ module.exports = function (grunt) {
         tasks: ['coffee:test']
       },
       styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css', '<%= yeoman.app %>/styles/{,*/}*.scss', '<%= yeoman.app %>/styles/{,*/}*.sass'],
-        tasks: ['copy:styles', 'sass', 'autoprefixer']
+        files: ['<%= yeoman.app %>/styles/{,*/}*.css', '<%= yeoman.app %>/styles/{,*/}*.less'],
+        tasks: ['copy:styles', 'less', 'autoprefixer']
       },
       livereload: {
         options: {
@@ -65,16 +65,16 @@ module.exports = function (grunt) {
         dest : '<%= yeoman.dist %>/scripts/scripts.js'
       }
     },
-    sass: {
-      dist: {
+    less: {
+      production: {
         options: {
-          sourcemap: true,
-          loadPath: '.tmp/styles/bootstrap'
+          sourceMap: true,
+          sourceMapFilename: '.tmp/styles/style.css.map'
         },
         files: [{
           expand: true,
           cwd: '.tmp/styles/',
-          src: ['{,*/}*.scss','{,*/}*.sass','!{,*/}_*.scss','!{,*/}_*.sass'],
+          src: 'style.less',
           dest: '.tmp/styles/',
           ext: '.css'
         }]
@@ -209,16 +209,6 @@ module.exports = function (grunt) {
         dirs: ['<%= yeoman.dist %>']
       }
     },
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg}',
-          dest: '<%= yeoman.dist %>/images'
-        }]
-      }
-    },
     svgmin: {
       dist: {
         files: [{
@@ -241,27 +231,6 @@ module.exports = function (grunt) {
       //     ]
       //   }
       // }
-    },
-    htmlmin: {
-      dist: {
-        options: {
-          /*removeCommentsFromCDATA: true,
-          // https://github.com/yeoman/grunt-usemin/issues/44
-          //collapseWhitespace: true,
-          collapseBooleanAttributes: true,
-          removeAttributeQuotes: true,
-          removeRedundantAttributes: true,
-          useShortDoctype: true,
-          removeEmptyAttributes: true,
-          removeOptionalTags: true*/
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'views/{,*/}*.html', 'directive_templates/*.html'],
-          dest: '<%= yeoman.dist %>'
-        }]
-      }
     },
     // Put files not handled in other tasks here
     copy: {
@@ -295,7 +264,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
-        src: ['{,*/}*.css','{,*/}*.scss','{,*/}*.sass']
+        src: ['{,*/}*.css', '{,*/}*.less']
       }
     },
     concurrent: {
@@ -310,9 +279,7 @@ module.exports = function (grunt) {
       dist: [
         'coffee',
         'copy:styles',
-        //'imagemin',
         'svgmin'
-        //,'htmlmin'
       ]
     },
     karma: {
@@ -355,7 +322,7 @@ module.exports = function (grunt) {
     grunt.task.run([
       'clean:server',
       'concurrent:server',
-      'sass',
+      'less',
       'autoprefixer',
       'connect:livereload',
       'open',
@@ -375,7 +342,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
-    'sass',
+    'less',
     'autoprefixer',
     'concat',
     'copy:dist',
