@@ -316,7 +316,9 @@ module.exports = function (grunt) {
       install: {
         options: {
           targetDir: '<%= yeoman.app%>/bower_components',
+          verbose: true,
           bowerOptions: {
+            forceLatest: true,
             production: true
           }
         }
