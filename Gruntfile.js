@@ -13,8 +13,14 @@ var mountFolder = function (connect, dir) {
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
-  require('load-grunt-tasks')(grunt, {scope: ['devDependencies', 'dependencies']});
+  if (process.env.NODE_ENV === 'production'){
+    require('load-grunt-tasks')(grunt, {scope: ['dependencies']});
+  }
+  else {
+    require('load-grunt-tasks')(grunt, {scope: ['devDependencies', 'dependencies']});
+  }
   require('time-grunt')(grunt);
+
 
   // configurable paths
   var yeomanConfig = {
