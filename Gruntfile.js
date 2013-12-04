@@ -13,7 +13,7 @@ var mountFolder = function (connect, dir) {
 // 'test/spec/**/*.js'
 
 module.exports = function (grunt) {
-  require('load-grunt-tasks')(grunt);
+  require('load-grunt-tasks')(grunt, {scope: ['devDependencies', 'dependencies']});
   require('time-grunt')(grunt);
 
   // configurable paths
