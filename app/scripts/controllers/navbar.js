@@ -15,4 +15,11 @@ angular.module('WebPuzzleFrontApp')
     $scope.signOut = function () {
       UserService.signOut();
     };
+
+    $scope.$on('$stateChangeSuccess',
+      function(event, toState){
+        if (toState.name === 'app.list') {
+          $scope.user = JSON.parse(UserService.getUserInfo());
+        }
+      });
   });

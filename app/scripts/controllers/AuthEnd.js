@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('WebPuzzleFrontApp')
-  .controller('AuthendCtrl', function ($scope, $stateParams, UserService, $location) {
+  .controller('AuthendCtrl', function ($scope, $stateParams, UserService, $state) {
     console.log('getting token', $stateParams.finaltoken);
 
     var promise = UserService.checkToken($stateParams.finaltoken);
@@ -10,10 +10,10 @@ angular.module('WebPuzzleFrontApp')
         UserService.setToken($stateParams.finaltoken);
         UserService.signIn(JSON.stringify(data.data));
         console.log(UserService.getUserInfo());
-        $location.path('/');
+        $state.go('app.list');
       },
       function error() {
-        $location.path('/');
+        $state.go('app.list');
       }
     );
 
