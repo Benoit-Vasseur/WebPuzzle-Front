@@ -324,6 +324,11 @@ module.exports = function (grunt) {
           }
         }
       }
+    },
+    githooks: {
+      all: {
+        'pre-commit': 'jshint test'
+      }
     }
   });
 
@@ -374,6 +379,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
+    'githooks',
     'jshint',
     'test',
     'build'
