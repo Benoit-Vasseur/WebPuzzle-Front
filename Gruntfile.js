@@ -69,7 +69,8 @@ module.exports = function (grunt) {
       production: {
         options: {
           sourceMap: true,
-          sourceMapFilename: '.tmp/styles/style.css.map'
+          sourceMapFilename: '.tmp/styles/style.css.map',
+          sourceMapBasepath: '.tmp/styles/'
         },
         files: [{
           expand: true,
@@ -323,6 +324,11 @@ module.exports = function (grunt) {
           }
         }
       }
+    },
+    githooks: {
+      all: {
+        'pre-commit': 'jshint test'
+      }
     }
   });
 
@@ -373,6 +379,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
+    'githooks',
     'jshint',
     'test',
     'build'
