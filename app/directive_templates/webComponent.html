@@ -3,6 +3,9 @@
         <a ng-show="wcClickable" ui-sref='app.list.detail({id:wc.id})' ng-click="selectWC.fn(wc)">
             <img ng-src="{{wc.imageLink}}" class="wc-image"/>
         </a>
+        <a ng-show="!wcClickable">
+            <img ng-src="{{wc.imageLink}}" class="wc-image"/>
+        </a>
     </div>
     <div class="wc-text">
         <a ng-show="wcClickable" ui-sref='app.list.detail({id:wc.id})' ng-click="selectWC.fn(wc)">
