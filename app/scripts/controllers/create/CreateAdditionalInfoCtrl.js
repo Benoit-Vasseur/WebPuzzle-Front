@@ -8,7 +8,8 @@ angular.module('WebPuzzleFrontApp')
       description: '',
       imageLink: '',
       githubLink: '',
-      demoLink: ''
+      demoLink: '',
+      author: ''
     };
 
     $scope.user = $stateParams.userName;
@@ -20,6 +21,8 @@ angular.module('WebPuzzleFrontApp')
         $scope.wc.name = data.name;
         $scope.wc.description = data.description;
         $scope.wc.githubLink = data.html_url;
+        $scope.wc.author = data.owner.login;
+        console.log(data);
     }).error(function(data) {
         console.log('NO');
         $scope.goBack();
@@ -40,8 +43,7 @@ angular.module('WebPuzzleFrontApp')
           params: {auth_token: UserService.getToken()}
         }).
           success(function (data, status) {
-            $scope.status = status;
-            $scope.data = data;
+            $state.go('app.list');
           }).
           error(function (data, status) {
             $scope.data = data || 'Request failed';
